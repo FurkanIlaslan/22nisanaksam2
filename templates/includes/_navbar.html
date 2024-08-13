@@ -1,0 +1,41 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-warning py-4 containers">
+    <div class="container-fluid">
+      <a class="navbar-brand me-5" href="#">
+        <img class="logo" src="{% static 'img/logo-web.svg' %}" alt="">
+      </a>
+      <button class="navbar-toggler buton p-0 p-md-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link active bg-black text-warning fw-bold px-4" aria-current="page" href="#">{{request.user.username}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link border border-black" href="{% url 'userlogout' %}">Çıkış Yap</a>
+          </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link active bg-black text-warning fw-bold px-4" aria-current="page" href="{% url 'register' %}">EXXENSPOR Ticari Üye Ol</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link border border-black" href="{% url 'userlogin' %}">Üye Girişi</a>
+            </li>
+        {% endif %}
+          <li class="nav-item dropdown text-center">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-globe"></i>
+            TR
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'password_change' %}">Şifre Değiştir</a></li>
+              <li><a class="dropdown-item" href="{% url 'account_delete' %}">Hesabı Sil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+      </div>
+    </div>
+  </nav>

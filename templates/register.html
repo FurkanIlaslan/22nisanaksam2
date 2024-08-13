@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container py-5">
+        <form method="POST" class="w-50 m-auto text-white p-3">
+            <h2 class="text-white text-center">Kullanıcı Kayıt Bölümü</h2>
+            {% csrf_token %}
+            {{form}}
+            <button type="submit" class="btn btn-primary mt-3">Kayıt Ol</button><br>
+            <a class="text-decoration-none text-white" href="{% url 'userlogin' %}">Zaten hesabın var mı?</a>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock content %}

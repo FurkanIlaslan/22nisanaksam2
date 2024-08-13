@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.containers{
+    padding-inline: 15%;
+}
+
+input::placeholder{
+    color: black !important;
+    font-weight: bold;
+}
+
+@media screen and (max-width:562px){
+    .logo{
+        width: 160px;
+    }
+    .buton{
+        width: 30px;
+    }
+
+    .icon{
+        width: 20px;
+    }
+}
+
+.arkaplan{
+    background-color: #111111;
+}
+
+/* Scroll çubuğu genel stili */
+::-webkit-scrollbar {
+    width: 6px; /* Genişlik */
+}
+
+/* Dikey scroll çubuğu arkaplan rengi */
+::-webkit-scrollbar-track {
+    background-color: #313131; /* Arkaplan rengi */
+}
+
+/* Dikey scroll çubuğu stili */
+::-webkit-scrollbar-thumb {
+    background-color: #000000b8; /* Scroll çubuğu rengi */
+    border-radius: 6px; /* Kenar yuvarlaklığı */
+}
+
+/* Hover durumunda scroll çubuğu rengi */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.positionn{
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+}
+
+.renk{
+    color: yellow;
+}

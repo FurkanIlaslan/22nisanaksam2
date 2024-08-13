@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .containers{
+        padding-inline: 10%;
+    }
+
+    .text-justify{
+        text-align: justify;
+    }
+</style>
+
+<div class="containers">
+    <div class="row py-5">
+        <h2 class="text-white text-center">{{film.isim}}</h2>
+        <hr class="my-2 text-white w-75 m-auto">
+        <div class="col-4 my-5 d-flex justify-content-center align-items-center">
+            <img class="rounded-circle" src="{{film.resim.url}}" alt="">
+        </div>
+        <div class="col-8 my-5">
+            <p class="text-white text-justify">{{film.aciklama}}</p>
+            <small class="text-white d-flex justify-content-end">{{film.yuklenme_tarih}}</small>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
