@@ -100,7 +100,7 @@ def accountDelete(request):
             user = request.user
             user.delete()
             logout(request)
-            messages.success(request, "Hesabınız başarıyla silindi!")
+            messages.success(request, "Hesabınız başarıyla silindi!Tebrikler!")
             return redirect('index')
         else:
             messages.error(request, "Hesabı silebilmek için giriş yapmalısın!")
